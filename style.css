@@ -28,3 +28,26 @@
     border: 10px black solid ;
   
   }
+.Result{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+
+    padding: 50px 100px;
+    font-size: larger;
+    font-weight: bold;
+    background-color: red;
+    border: 10px black solid ;
+}
+
+.finalResult{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+
+    padding: 50px 100px;
+    font-size: larger;
+    font-weight: bold;
+    background-color: red;
+    border: 10px black solid ;
+}

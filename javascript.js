@@ -1,6 +1,8 @@
 let randomNumber; // Declare the variable here
 let computerSelection;
 let playerSelection;
+let win=0;
+ let lose=0;
 
 function getComputerChoice() {
   let choice;
@@ -41,35 +43,57 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-function game() {
-  let win = 0;
 
-  let lose = 0;
-  while (  win<5 && lose<5 ) {
+function game() {
+  
+  
     computerSelection = getComputerChoice();
 
     console.log(playRound(playerSelection, computerSelection));
     if (playRound(playerSelection, computerSelection) === "Congratulations! You Win") {
       win++;
+      
     } else if (playRound(playerSelection, computerSelection) === "Unfortunately! You Lose") {
       lose++;
+      
     }
-  }
-  if (win > lose) {
-    return "Congratulations! You Win";
-  } else if (win < lose) {
-    return "Unfortunately! You Lose";
-  } else {
-    return "You Tie!";
-  }
-}
+  
 
+   
+}
+const playerResult=document.querySelector('.playerResult');
+
+ 
+  const computerResult=document.querySelector('.computerResult');
+  playerResult.textContent="Your Score= "+win;
+  computerResult.textContent="The computer Score= "+lose;
+  const finalResult=document.querySelector('.finalResult');
 const gameButton = document.querySelectorAll('.gameButton');
+
  gameButton.forEach(button=> button.addEventListener('click', ()=>{ 
+ 
+   if( win<5 && lose<5){
   playerSelection=button.textContent;
+
    const result=game();
-   alert(result);
- } ) )
+   playerResult.textContent="Your Score= "+win;
+   computerResult.textContent="The computer Score= "+lose;
+   }
+   if( win==5){
+    finalResult.textContent="Congratulations! You Win";
+   
+    return 
+   }
+   else if(lose==5){
+    finalResult.textContent="You Lose";
+    return 
+
+   }
+   
+ } ) );
+
+   
+ // pop the results on the webpage 
 
  
   
